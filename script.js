@@ -47,8 +47,8 @@ function colorSquare(e) {
   }
 }
 
-function changeColor(choice) {
-  color = choice;
+function changeColor(value) {
+  color = value;
 }
 
 function randomColor() {
