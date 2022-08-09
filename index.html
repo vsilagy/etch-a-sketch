@@ -19,21 +19,14 @@
       </header>
       <main class="main">
         <div class="controls">
-          <button class="btn">Random</button>
-          <button class="btn">Black</button>
-          <button class="btn">White</button>
-          <button class="btn">Reset</button>
-          <button class="btn">Grid</button>
-          <div class="slider">
-            <p id="slider-size">16 x 16</p>
-            <input
-              id="slider-value"
-              type="range"
-              value="16"
-              min="4"
-              max="48"
-              onchange="changeSize(this.value)"
-            />
+          <!-- <button class="btn" id="color-btn">Color</button> -->
+          <button class="btn" id="random-btn">Rainbow</button>
+          <button class="btn" id="black-btn">Black</button>
+          <button class="btn" id="eraser-btn">Eraser</button>
+          <button class="btn" id="clear-btn">Clear</button>
+          <div class="slider-container">
+            <p id="slider-text">16 x 16</p>
+            <input id="slider-value" type="range" value="16" min="4" max="48" />
           </div>
         </div>
 

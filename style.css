@@ -3,6 +3,7 @@
   --main-color: #1572a1;
   --second-color: #9ad0ec;
   --font-color: #2c3333;
+  --grid-color: #f5f5f5;
 }
 
 * {
@@ -50,7 +51,7 @@ h1 {
   border: 2px solid black;
   border-radius: 8px;
   color: var(--font-color);
-  background-color: transparent;
+  background-color: var(--second-color);
   font-size: 16px;
   font-family: inherit;
   letter-spacing: 1px;
@@ -60,13 +61,22 @@ h1 {
   cursor: pointer;
 }
 
-#slider {
+.btn:hover {
+  background-color: #f3f3f3;
+}
+
+.slider-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 16px;
 }
 
 #slider-value {
-  -webkit-appearance: none;
+  appearance: none;
   height: 6px;
   width: 85%;
   background: var(--font-color);
@@ -74,12 +84,6 @@ h1 {
   border-radius: 8px;
   cursor: pointer;
 }
-
-/* 
-#slider-value::-webkit-slider-thumb {
-}
-#slider-value::-webkit-slider-runnable-track {
-} */
 
 .grid {
   width: 640px;
@@ -90,7 +94,7 @@ h1 {
 
 .grid > div {
   background-color: #fff;
-  border: 1px solid var(--second-color);
+  border: 1px solid var(--grid-color);
 }
 
 .footer {

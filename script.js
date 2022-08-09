@@ -1,6 +1,21 @@
 const grid = document.getElementById("grid");
-const sliderSize = document.getElementById("slider-size");
+const controls = document.getElementsByClassName(".controls");
+const randomBtn = document.getElementById("random-btn");
+const blackBtn = document.getElementById("black-btn");
+const eraserBtn = document.getElementById("eraser-btn");
+const clearBtn = document.getElementById("clear-btn");
+const gridBtn = document.getElementById("grid-btn");
+const sliderText = document.getElementById("slider-text");
 const sliderValue = document.getElementById("slider-value");
+
+let size = 16;
+let color = "black";
+
+randomBtn.onclick = () => changeColor("random");
+blackBtn.onclick = () => changeColor("black");
+eraserBtn.onclick = () => changeColor("white");
+clearBtn.onclick = () => clearGrid();
+sliderValue.onchange = (e) => changeSize(e.target.value);
 
 // grid size
 function renderGrid(size) {
@@ -14,19 +29,35 @@ function renderGrid(size) {
   let gridSize = size * size;
   for (let i = 0; i < gridSize; i++) {
     let square = document.createElement("div");
-    square.classList.add = "grid-element";
     square.addEventListener("mouseover", colorSquare);
     grid.appendChild(square);
   }
 }
 
-renderGrid(16);
-
 function changeSize(value) {
   renderGrid(value);
-  sliderSize.innerHTML = `${value} x ${value}`;
+  sliderText.innerHTML = `${value} x ${value}`;
 }
 
-function colorSquare() {
-  this.style.backgroundColor = "black";
+function colorSquare(e) {
+  if (color === "random") {
+    e.target.style.backgroundColor = randomColor();
+  } else {
+    e.target.style.backgroundColor = color;
+  }
 }
+
+function changeColor(choice) {
+  color = choice;
+}
+
+function randomColor() {
+  return `hsl(${Math.random() * 360}, 100%, 50%)`;
+}
+
+function clearGrid() {
+  let squares = grid.querySelectorAll("div");
+  squares.forEach((div) => (div.style.backgroundColor = "white"));
+}
+
+renderGrid(size);
