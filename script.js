@@ -8,7 +8,7 @@ const gridBtn = document.getElementById("grid-btn");
 const sliderText = document.getElementById("slider-text");
 const sliderValue = document.getElementById("slider-value");
 
-let size = 16;
+let size = 32;
 let color = "black";
 
 randomBtn.onclick = () => changeColor("random");
