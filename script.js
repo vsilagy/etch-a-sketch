@@ -2,6 +2,8 @@ const grid = document.getElementById("grid");
 const controls = document.getElementsByClassName(".controls");
 const randomBtn = document.getElementById("random-btn");
 const blackBtn = document.getElementById("black-btn");
+const blueBtn = document.getElementById("blue-btn");
+const redBtn = document.getElementById("red-btn");
 const eraserBtn = document.getElementById("eraser-btn");
 const clearBtn = document.getElementById("clear-btn");
 const gridBtn = document.getElementById("grid-btn");
@@ -13,6 +15,8 @@ let color = "black";
 
 randomBtn.onclick = () => changeColor("random");
 blackBtn.onclick = () => changeColor("black");
+blueBtn.onclick = () => changeColor('blue');
+redBtn.onclick = () => changeColor('red')
 eraserBtn.onclick = () => changeColor("white");
 clearBtn.onclick = () => clearGrid();
 sliderValue.onchange = (e) => changeSize(e.target.value);
