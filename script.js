@@ -3,20 +3,20 @@ const controls = document.getElementsByClassName(".controls");
 const randomBtn = document.getElementById("random-btn");
 const blackBtn = document.getElementById("black-btn");
 const blueBtn = document.getElementById("blue-btn");
-const redBtn = document.getElementById("red-btn");
 const eraserBtn = document.getElementById("eraser-btn");
 const clearBtn = document.getElementById("clear-btn");
 const gridBtn = document.getElementById("grid-btn");
 const sliderText = document.getElementById("slider-text");
 const sliderValue = document.getElementById("slider-value");
+const colorBtn = document.getElementById("color-btn");
 
 let size = 32;
 let color = "black";
 
+colorBtn.oninput = (e) => changeColor(e.target.value)
 randomBtn.onclick = () => changeColor("random");
-blackBtn.onclick = () => changeColor("black");
-blueBtn.onclick = () => changeColor('blue');
-redBtn.onclick = () => changeColor('red')
+// blackBtn.onclick = () => changeColor("black");
+// blueBtn.onclick = () => changeColor('blue');
 eraserBtn.onclick = () => changeColor("white");
 clearBtn.onclick = () => clearGrid();
 sliderValue.onchange = (e) => changeSize(e.target.value);

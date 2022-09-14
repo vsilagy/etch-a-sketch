@@ -9,3 +9,5 @@
 ### Objectives:
 
 - Build a sketchpad using DOM manipulation
+- _Added color picker using this [tutorial](https://youtu.be/9Ds6dzhda0c)_
+- _Updated the grid range slide using this [tutorial](https://youtu.be/ReRny33Yzbw)_

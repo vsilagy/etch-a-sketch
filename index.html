@@ -10,25 +10,22 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <title>Etch-a-Sketch</title>
+    <title>etch-a-sketch</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1 class="title">Etch-A-Sketch</h1>
+        <h1 class="title">etch-a-sketch</h1>
       </header>
       <main class="main">
         <div class="controls">
-          <!-- <button class="btn" id="color-btn">Color</button> -->
-          <button class="btn" id="black-btn">Black</button>
-          <button class="btn" id="blue-btn">Blue</button>
-          <button class="btn" id="red-btn">Red</button>
-          <button class="btn" id="random-btn">Rainbow</button>
-          <button class="btn" id="eraser-btn">Eraser</button>
-          <button class="btn" id="clear-btn">Clear</button>
+          <input type="color" id="color-btn" value="#fff">
+          <button class="btn" id="random-btn"><img src="./img/palette.png" alt="" srcset=""></button>
+          <button class="btn" id="eraser-btn"><img src="./img/eraser.png" alt=""></button>
+          <button class="btn" id="clear-btn"><img src="./img/autorenew.png" alt="" srcset=""></button>
           <div class="slider-container">
             <p id="slider-text">32 x 32</p>
-            <input id="slider-value" type="range" value="32" min="4" max="64" />
+            <input id="slider-value" class="slider" type="range" value="32" min="4" max="64" />
           </div>
         </div>
 
