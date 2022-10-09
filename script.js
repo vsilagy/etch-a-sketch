@@ -13,13 +13,12 @@ const colorBtn = document.getElementById("color-btn");
 let size = 32;
 let color = "black";
 
-colorBtn.oninput = (e) => changeColor(e.target.value)
-randomBtn.onclick = () => changeColor("random");
-// blackBtn.onclick = () => changeColor("black");
-// blueBtn.onclick = () => changeColor('blue');
-eraserBtn.onclick = () => changeColor("white");
-clearBtn.onclick = () => clearGrid();
-sliderValue.onchange = (e) => changeSize(e.target.value);
+// Event listeners
+colorBtn.addEventListener("input", (e) => handleChangeColor(e.target.value));
+randomBtn.addEventListener("click", () => handleChangeColor("random"));
+eraserBtn.addEventListener("click", () => handleChangeColor("white"));
+clearBtn.addEventListener("click", () => clearGrid());
+sliderValue.addEventListener("change", (e) => handleChangeSize(e.target.value));
 
 // grid size
 function renderGrid(size) {
@@ -33,17 +32,17 @@ function renderGrid(size) {
   let gridSize = size * size;
   for (let i = 0; i < gridSize; i++) {
     let square = document.createElement("div");
-    square.addEventListener("mouseover", colorSquare);
+    square.addEventListener("mouseover", handleColorSquare);
     grid.appendChild(square);
   }
 }
 
-function changeSize(value) {
+function handleChangeSize(value) {
   renderGrid(value);
   sliderText.innerHTML = `${value} x ${value}`;
 }
 
-function colorSquare(e) {
+function handleColorSquare(e) {
   if (color === "random") {
     e.target.style.backgroundColor = randomColor();
   } else {
@@ -51,7 +50,7 @@ function colorSquare(e) {
   }
 }
 
-function changeColor(value) {
+function handleChangeColor(value) {
   color = value;
 }
 
